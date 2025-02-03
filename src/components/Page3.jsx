@@ -3,6 +3,9 @@ import React from "react";
 import logo from "../assests/Img.png";
 import Logo from "../assests/white_logo.png";
 import img1 from "../assests/ImgP03_02.png";
+import img2 from "../assests/ImgP03_03.png";
+import img3 from "../assests/ImgP03_04.png";
+import "../CSS/file.css";
 const Page3 = () => {
   return (
     <>
@@ -13,6 +16,12 @@ const Page3 = () => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          marginTop: "100px",
+          marginBottom: "100px",
+          "@media print": {
+            width: "210mm",
+            height: "297mm",
+          },
         }}
       >
         <Grid
@@ -20,6 +29,10 @@ const Page3 = () => {
             width: "60%",
             height: "100%",
             border: "2px solid black",
+            "@media print": {
+              width: "210mm",
+              height: "297mm",
+            },
           }}
         >
           {/* Top */}
@@ -31,6 +44,10 @@ const Page3 = () => {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              "@media print": {
+                WebkitPrintColorAdjust: "exact",
+                printColorAdjust: "exact",
+              },
             }}
           >
             {/* Top Left*/}
@@ -58,6 +75,9 @@ const Page3 = () => {
                 justifyContent: "center",
                 alignItems: "center",
                 gap: 4,
+                "@media print": {
+                  gap: 9,
+                },
               }}
             >
               <img
@@ -74,12 +94,20 @@ const Page3 = () => {
                   alignItems: "center",
                   flexDirection: "column",
                   gap: 4,
+                  "@media print": {
+                    gap: 2,
+                  },
                 }}
               >
                 <Typography
-                  fontSize={"5rem"}
                   fontWeight={"bolder"}
                   textColor={"black"}
+                  sx={{
+                    fontSize: "5rem",
+                    "@media print": {
+                      fontSize: "2.5rem !important",
+                    },
+                  }}
                 >
                   WHY <span style={{ color: "#56A4DA" }}>US?</span>
                 </Typography>
@@ -88,6 +116,11 @@ const Page3 = () => {
                   fontSize={"x-large"}
                   fontWeight={"bold"}
                   fontFamily={"serif"}
+                  sx={{
+                    "@media print": {
+                      fontSize: "1.2rem !important",
+                    },
+                  }}
                 >
                   We add incredible value to a project through our holistic and
                   systemetic approach. We ensure that the project is optimized
@@ -105,6 +138,7 @@ const Page3 = () => {
               flexDirection: "column",
               justifyContent: "space-evenly",
               gap: 8,
+              marginTop: "40px",
             }}
           >
             <Box
@@ -127,6 +161,11 @@ const Page3 = () => {
                   fontSize={"2rem"}
                   fontFamily={"serif"}
                   maxWidth={"33.33%"}
+                  sx={{
+                    "@media print": {
+                      fontSize: "1.5rem",
+                    },
+                  }}
                 >
                   Detailed Engineering
                 </Typography>
@@ -137,18 +176,42 @@ const Page3 = () => {
                   backgroundColor: "#F0EFEF",
                   borderRadius: "100em 0em 0em 100em",
                   width: "67.777%",
+                  display: "flex",
+                  justifyContent: "space-around",
+                  alignItems: "center",
+                  gap: 20,
+                  "@media print": {
+                    WebkitPrintColorAdjust: "exact",
+                    printColorAdjust: "exact",
+                    gap: 6,
+                  },
                 }}
               >
                 <img
+                  className="print-img"
                   style={{
                     filter: " drop-shadow(0 0 0.50rem black)",
                     borderRadius: "50%",
                     padding: "10px",
+                    width: "150px",
                   }}
-                  width={"150px"}
                   alt="img"
                   src={img1}
                 />
+
+                <Typography
+                  textColor={"#0f4C7f"}
+                  fontSize={"22px"}
+                  fontFamily={"serif"}
+                  sx={{
+                    "@media print": {
+                      fontSize: "1.02rem",
+                    },
+                  }}
+                >
+                  Expert design and planning to ensure higher generation, and
+                  cost optimization of the product
+                </Typography>
               </Box>
             </Box>
 
@@ -158,6 +221,9 @@ const Page3 = () => {
                 gap: 10,
                 justifyContent: "center",
                 height: "33.33%",
+                "@media print": {
+                  gap: 4,
+                },
               }}
             >
               <Box
@@ -165,9 +231,20 @@ const Page3 = () => {
                   backgroundColor: "#F0EFEF",
                   borderRadius: "0em 100em 100em 0em",
                   width: "67.777%",
+                  display: "flex",
+                  flexDirection: "row-reverse",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  gap: 18,
+                  "@media print": {
+                    WebkitPrintColorAdjust: "exact",
+                    printColorAdjust: "exact",
+                    gap: 8,
+                  },
                 }}
               >
                 <img
+                  className="print-img"
                   style={{
                     filter: " drop-shadow(0 0 0.50rem black)",
                     borderRadius: "50%",
@@ -175,8 +252,22 @@ const Page3 = () => {
                   }}
                   width={"150px"}
                   alt="img"
-                  src={img1}
+                  src={img2}
                 />
+                <Typography
+                  textColor={"#0f4C7f"}
+                  fontSize={"22px"}
+                  fontFamily={"serif"}
+                  paddingLeft={"20px"}
+                  sx={{
+                    "@media print": {
+                      fontSize: "1.02rem",
+                    },
+                  }}
+                >
+                  Right Material soucing to ensure timely, high quality, and
+                  cost effective project delivery
+                </Typography>
               </Box>
               <Box
                 sx={{
@@ -190,6 +281,11 @@ const Page3 = () => {
                   fontSize={"2rem"}
                   fontFamily={"serif"}
                   maxWidth={"33.33%"}
+                  sx={{
+                    "@media print": {
+                      fontSize: "1.5rem",
+                    },
+                  }}
                 >
                   Vendor Management
                 </Typography>
@@ -216,6 +312,11 @@ const Page3 = () => {
                   fontSize={"2rem"}
                   fontFamily={"serif"}
                   maxWidth={"33.33%"}
+                  sx={{
+                    "@media print": {
+                      fontSize: "1.5rem",
+                    },
+                  }}
                 >
                   Site Management
                 </Typography>
@@ -226,9 +327,19 @@ const Page3 = () => {
                   backgroundColor: "#F0EFEF",
                   borderRadius: "100em 0em 0em 100em",
                   width: "67.777%",
+                  display: "flex",
+                  justifyContent: "space-around",
+                  alignItems: "center",
+                  gap: 20,
+                  "@media print": {
+                    WebkitPrintColorAdjust: "exact",
+                    printColorAdjust: "exact",
+                    gap: 6,
+                  },
                 }}
               >
                 <img
+                  className="print-img"
                   style={{
                     filter: " drop-shadow(0 0 0.50rem black)",
                     borderRadius: "50%",
@@ -236,8 +347,22 @@ const Page3 = () => {
                   }}
                   width={"150px"}
                   alt="img"
-                  src={img1}
+                  src={img3}
                 />
+
+                <Typography
+                  textColor={"#0f4C7f"}
+                  fontSize={"22px"}
+                  fontFamily={"serif"}
+                  sx={{
+                    "@media print": {
+                      fontSize: "1.02rem",
+                    },
+                  }}
+                >
+                  On-site supervision to ensure efficient execution, safety, and
+                  adherence of quality standards
+                </Typography>
               </Box>
             </Box>
           </Box>
@@ -248,4 +373,3 @@ const Page3 = () => {
 };
 
 export default Page3;
-//
