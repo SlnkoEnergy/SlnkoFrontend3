@@ -11,6 +11,8 @@ import CivilWorks1 from "./components/CivilWorks1";
 import CivilWorks2 from "./components/CivilWorks2";
 import Page3 from "./components/Page3";
 import Page4 from "./components/Page4";
+import Page5 from "./components/Page5";
+import Page6 from "./components/Page6";
 
 const App = () => {
   return (
@@ -27,6 +29,8 @@ const App = () => {
           <Route path="/8" element={<CivilWorks2  />} />
           <Route path="/9" element={<Page3 />} />
           <Route path="/10" element={<Page4 />} />
+          <Route path="/11" element={<Page5 />} />
+          <Route path="/12" element={<Page6 />} />
           <Route path="/" element={<ReferenceList  />} />
         </Routes>
       </BrowserRouter>
