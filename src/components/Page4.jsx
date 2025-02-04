@@ -18,6 +18,10 @@ const Page4 = () => {
           "@media print": {
             width: "210mm",
             height: "297mm",
+            overflow: "hidden",
+            margin: "0",
+            padding: "0",
+            pageBreakInside: "avoid",
           },
         }}
       >
@@ -38,7 +42,11 @@ const Page4 = () => {
               width: "100%",
               alignItems: "flex-end",
               gap: 2,
-              padding: "20px",
+              paddingTop: "20px",
+              "@media print": {
+                padding: "5px",
+                marginTop:'10px'
+              },
             }}
           >
             <img
@@ -51,11 +59,12 @@ const Page4 = () => {
 
             <hr
               style={{
-                width: "60%",
+                width: "50%",
                 color: "blue",
                 borderTop: "3px solid #0f4C7f",
-                margin: "19px 0",
+                margin: "40px 0",
               }}
+              className="hr-line"
             />
           </Box>
 
@@ -66,9 +75,9 @@ const Page4 = () => {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              padding: "20px",
+              padding: "10px",
               "@media print": {
-                height: "22vh",
+                height: "24vh",
                 WebkitPrintColorAdjust: "exact",
                 printColorAdjust: "exact",
               },
@@ -92,7 +101,7 @@ const Page4 = () => {
                 fontWeight={"bolder"}
                 sx={{
                   "@media print": {
-                    fontSize: "3.5rem",
+                    fontSize: "3.4rem",
                   },
                 }}
               >
@@ -104,7 +113,7 @@ const Page4 = () => {
                 fontWeight={"bolder"}
                 sx={{
                   "@media print": {
-                    fontSize: "3.5rem",
+                    fontSize: "3.4rem",
                   },
                 }}
               >
@@ -116,7 +125,7 @@ const Page4 = () => {
                 fontWeight={"bolder"}
                 sx={{
                   "@media print": {
-                    fontSize: "3.5rem",
+                    fontSize: "3.4rem",
                   },
                 }}
               >
@@ -130,6 +139,9 @@ const Page4 = () => {
                 height: "100%",
                 margin: "20px",
                 borderRadius: "5px",
+                "@media print": {
+                  margin: "20px",
+                },
               }}
             >
               <Typography
@@ -138,7 +150,8 @@ const Page4 = () => {
                 padding={"45px 20px"}
                 sx={{
                   "@media print": {
-                    fontSize: "1.4rem",
+                    fontSize: "1.3rem",
+                    padding: "30px 10px",
                   },
                 }}
               >
@@ -158,6 +171,9 @@ const Page4 = () => {
               justifyContent: "center",
               alignItems: "center",
               textUnderlineOffset: "8px",
+              "@media print": {
+                marginTop: "30px",
+              },
             }}
           >
             <Typography
@@ -167,7 +183,7 @@ const Page4 = () => {
               sx={{
                 textDecoration: "underline 3px rgb(243, 182, 39)",
                 "@media print": {
-                  fontSize: "2rem",
+                  fontSize: "2.2rem",
                 },
               }}
             >
@@ -181,7 +197,7 @@ const Page4 = () => {
                 marginTop: "20px",
                 "@media print": {
                   fontSize: "1.5rem",
-                  marginTop: "15px",
+                  marginTop: "14px",
                 },
               }}
             >
@@ -197,6 +213,9 @@ const Page4 = () => {
               justifyContent: "center",
               alignItems: "center",
               marginTop: "20px",
+              '@media print':{
+                marginTop:'35px'
+              }
             }}
           >
             <Box
@@ -218,6 +237,7 @@ const Page4 = () => {
                   "@media print": {
                     WebkitPrintColorAdjust: "exact",
                     printColorAdjust: "exact",
+                    height:'420px'
                   },
                 }}
               >
@@ -240,8 +260,9 @@ const Page4 = () => {
                     fontSize: "22px",
                     textAlign: "left",
                     paddingLeft: "0 0 0 40px",
-                    gap: 20,
+                    gap: 10,
                   }}
+                  className="ul-item"
                 >
                   <li style={{ marginBottom: "30px" }}>Cost & Risk Analysis</li>
                   <li style={{ marginBottom: "30px" }}>Detailed Site Survey</li>
@@ -269,6 +290,7 @@ const Page4 = () => {
                   "@media print": {
                     WebkitPrintColorAdjust: "exact",
                     printColorAdjust: "exact",
+                    height:'420px'
                   },
                 }}
               >
@@ -291,8 +313,9 @@ const Page4 = () => {
                     fontSize: "22px",
                     textAlign: "left",
                     paddingLeft: "0 0 0 40px",
-                    gap: 20,
+                    gap: 10,
                   }}
+                  className="ul-item"
                 >
                   <li style={{ marginBottom: "30px" }}>
                     Pre-dispatched Inspection
@@ -325,6 +348,7 @@ const Page4 = () => {
                   "@media print": {
                     WebkitPrintColorAdjust: "exact",
                     printColorAdjust: "exact",
+                    height:'420px'
                   },
                 }}
               >
@@ -347,8 +371,9 @@ const Page4 = () => {
                     fontSize: "22px",
                     textAlign: "left",
                     paddingLeft: "0 0 0 40px",
-                    gap: 20,
+                    gap: 10,
                   }}
+                  className="ul-item"
                 >
                   <li style={{ marginBottom: "30px" }}>Supervision</li>
                   <li style={{ marginBottom: "30px" }}>Inspection</li>
