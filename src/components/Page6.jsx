@@ -28,7 +28,7 @@ const Page6 = () => {
             position: "absolute",
             left: "59.59%",
             backgroundColor: "#F2F4F5",
-            height: "143%",
+            height: "127.5%",
             width: "20%",
             zIndex: -1,
             "@media print": {
@@ -69,11 +69,14 @@ const Page6 = () => {
             <hr
               style={{
                 width: "60%",
-                color: "blue",
-                borderTop: "3px solid #0f4C7f",
+                borderTop: "3px solid #0f4C7f", // Keeps the line visible
                 margin: "36px 0",
+                boxShadow: "none !important", // Force removal of any shadow
+                background: "transparent !important", // Ensure no background color
+                border: "none !important", // Ensure no border shadow
+                // Remove any outline if applied
               }}
-              className="hr-line2"
+              className="hr-line3"
             />
           </Box>
 

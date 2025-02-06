@@ -58,9 +58,12 @@ const Page8 = () => {
             <hr
               style={{
                 width: "50%",
-                color: "blue",
-                borderTop: "3px solid #0f4C7f",
+                borderTop: "3px solid #0f4C7f", // Keeps the line visible
                 margin: "40px 0",
+                boxShadow: "none !important", // Force removal of any shadow
+                background: "transparent !important", // Ensure no background color
+                border: "none !important", // Ensure no border shadow
+                // Remove any outline if applied
               }}
               className="hr-line"
             />

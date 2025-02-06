@@ -13,6 +13,9 @@ import Page5 from './Page5'
 import Page6 from './Page6'
 import Page7 from './Page7'
 import Page8 from './Page8'
+import Page9 from './Page9'
+import Page16 from './Page16'
+import Page17 from './Page17'
 
 const ReferenceList = () => {
   return <>
@@ -24,12 +27,15 @@ const ReferenceList = () => {
   <Page6 />
   <Page7 />
   <Page8 />
+  <Page9 />
   <Reference/>
   <Reference2 />
   <Reference3 />
   <Reference4 />
   <CivilWorks1 />
   <CivilWorks2 />
+  <Page16 />
+  <Page17 />
   </>
 }
 
