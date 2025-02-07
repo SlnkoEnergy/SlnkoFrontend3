@@ -1,4 +1,11 @@
 @media print {
+  @media print {
+    * {
+      -webkit-print-color-adjust: exact !important; /* Ensures colors are printed */
+      print-color-adjust: exact !important;
+    }
+  }
+  
   .logo-img {
     margin-left: 0 !important;
     margin-right: 40px !important;

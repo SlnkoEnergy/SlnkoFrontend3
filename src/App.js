@@ -18,6 +18,7 @@ import Page8 from "./components/Page8";
 import Page9 from "./components/Page9";
 import Page16 from "./components/Page16.jsx";
 import Page17 from "./components/Page17.jsx";
+import Page18 from "./components/Page18.jsx";
 
 const App = () => {
   return (
@@ -41,6 +42,7 @@ const App = () => {
           <Route path="/15" element={<Page9 />} />
           <Route path="/16" element={<Page16 />} />
           <Route path="/17" element={<Page17 />} />
+          <Route path="/18" element={<Page18 />} />
           <Route path="/" element={<ReferenceList  />} />
         </Routes>
       </BrowserRouter>

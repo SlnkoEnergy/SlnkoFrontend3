@@ -190,6 +190,7 @@ const Page2 = () => {
             fontSize: "64px",
             maxWidth: "600px",
             fontWeight: 100,
+            color: "white !important" ,
             "@media print": {
               maxWidth: "450px",
               fontSize: "48px",
@@ -197,7 +198,7 @@ const Page2 = () => {
             },
           }}
         >
-          <span style={{ fontWeight: "bolder", color: "white" }}>
+          <span style={{ fontWeight: "bolder" }}>
             India's <span style={{ color: "#17a2b8" }}>Prominent</span>&nbsp;
             Com<span style={{ color: "#17a2b8" }}>pany for</span>&nbsp; KUSUM{" "}
             <span style={{ color: "#17a2b8" }}>Projects !!!</span>
