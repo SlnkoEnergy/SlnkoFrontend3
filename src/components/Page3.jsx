@@ -28,7 +28,7 @@ const Page3 = () => {
           sx={{
             width: "60%",
             height: "100%",
-            border: "2px solid black",
+            border: "2px solid blue",
             "@media print": {
               width: "210mm",
               height: "297mm",

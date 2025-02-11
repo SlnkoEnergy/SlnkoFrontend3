@@ -15,12 +15,13 @@ const Page2 = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        margin: "0", // Ensures print margins don't cut the content
         "@media print": {
           width: "210mm",
-          height: "297mm",
-          margin: "0",
-          padding: "0",
+            height: "297mm",
+            overflow: "hidden",
+            margin: "0",
+            padding: "0",
+            pageBreakInside: "avoid",
         },
       }}
     >
@@ -29,13 +30,11 @@ const Page2 = () => {
           width: "60%",
           height: "100%",
           display: "flex",
-          border: "1px solid black",
-          borderRight: "1px solid black",
-          position:'relative', // Ensures right border
+          border: "2px solid blue",
+          position:'relative',
           "@media print": {
             width: "210mm",
             height: "297mm",
-            border: "2px solid black !important",
             boxShadow: "none",
           },
         }}

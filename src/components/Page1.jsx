@@ -32,11 +32,10 @@ const Page1 = () => {
             "@media print": {
               width: "210mm",
               height: "297mm",
-              border: "1px solid black",
             },
             width: "50%",
             height: "130vh",
-            border: "1px solid black",
+            border: "2px solid blue",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -193,7 +192,6 @@ const Page1 = () => {
                     justifyContent: "center",
                     width: "100%",
                     paddingTop: "110px",
-
                     "@media print": {
                       paddingTop: "90px",
                     },
@@ -229,7 +227,7 @@ const Page1 = () => {
                     ))}
                   </List>
                 </Box>
-                ;
+                
               </Box>
             </Box>
 

@@ -275,8 +275,15 @@ const Page6 = () => {
                 </tr>
               </tbody>
             </Table>
-
+            </Sheet>
             <br />
+            <Sheet
+            sx={{
+              width: "100%",
+              backgroundColor: "white",
+            }}
+          >
+           
             <Table className="table-header1">
               <thead>
                 <tr>
