@@ -7,9 +7,10 @@ const Summary = () => {
   return (
     <>
       <Grid
+        container
         sx={{
           width: "100%",
-          height: "100%",
+          height:'100%',
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -25,12 +26,19 @@ const Summary = () => {
       >
         <Grid
           sx={{
-            width: "60%",
-            height: "100%",
+            width: "50%",
+            minHeight:'120vh',
             border: "2px solid blue",
+            display: "flex",
+            alignItems: "center",
+            flexDirection: "column",
+            "@media (max-width: 1340px)": {
+              width: "75%",
+            },
             "@media print": {
-              width: "210mm",
-              height: "297mm",
+              width: "210mm !important",
+              height: "297mm !important",
+              minHeight:'0vh !important'
             },
           }}
         >
@@ -40,38 +48,84 @@ const Summary = () => {
               width: "100%",
               alignItems: "flex-end",
               gap: 2,
-              paddingTop: "20px",
-              "@media print": {
-                padding: "5px",
-                marginTop: "10px",
-              },
             }}
           >
             <img
-              width={"350px"}
-              height={"200px"}
-              className="logo-img2"
+              width={"220px"}
+              height={"110px"}
               alt="logo"
               src={logo}
+              style={{ maxWidth: "100%" }}
             />
-
-            <hr
-              style={{
-                width: "50%",
-                borderTop: "3px solid #0f4C7f", // Keeps the line visible
-                margin: "40px 0",
-                boxShadow: "none !important", // Force removal of any shadow
-                background: "transparent !important", // Ensure no background color
-                border: "none !important", // Ensure no border shadow
-                // Remove any outline if applied
+            <Box
+              sx={{
+                width: "60%",
+                margin: "18px 0",
+                "@media (max-width: 1340px)": {
+                  width: "50%",
+                },
               }}
-              className="hr-line3"
-            />
+            >
+              <hr
+                style={{
+                  width: "100%",
+                  color: "blue",
+                  borderTop: "3px solid #0f4C7f",
+                }}
+              />
+            </Box>
           </Box>
 
-          <Box>
+          <Box
+            sx={{
+              width: "90%",
+              height: "80%",
+              
+            }}
+          >
             <Table className="table-header-Summary">
               <thead>
+                <tr>
+                  <th
+                    colSpan={4}
+                    style={{
+                      fontWeight: "bold",
+                      fontFamily: "serif",
+                      fontSize: "1.2rem",
+                      textAlign: "center",
+                      backgroundColor: "#B4C7E7",
+                    }}
+                  ></th>
+                </tr>
+
+                <tr>
+                  <th
+                    colSpan={4}
+                    style={{
+                      fontWeight: "bold",
+                      fontFamily: "serif",
+                      
+                      textAlign: "center",
+                      backgroundColor: "#D9D9D9",
+                    }}
+                  >
+                    PLANT COSTING SUMMARY ONLY
+                  </th>
+                </tr>
+
+                <tr>
+                  <th
+                    style={{
+                      fontWeight: "bold",
+                      fontFamily: "serif",
+                      fontSize: "1.2rem",
+                      textAlign: "center",
+                    }}
+                  >
+                    Capacity (kWp DC)
+                  </th>
+                </tr>
+
                 <th style={{ width: "40%" }}>Items</th>
                 <th>Basic Value</th>
                 <th>GST Value</th>
@@ -148,12 +202,14 @@ const Summary = () => {
                 </tr>
 
                 <tr>
-                  <td style={{ backgroundColor: "#f6e899" }}>
-                    1. Total Plant Cost{" "}
+                  <td
+                    style={{ backgroundColor: "#FFF2CC", fontWeight: "bold" }}
+                  >
+                    1. Total Plant Cost
                   </td>
-                  <td style={{ backgroundColor: "#f6e899" }}></td>
-                  <td style={{ backgroundColor: "#f6e899" }}></td>
-                  <td style={{ backgroundColor: "#f6e899" }}></td>
+                  <td style={{ backgroundColor: "#FFF2CC" }}></td>
+                  <td style={{ backgroundColor: "#FFF2CC" }}></td>
+                  <td style={{ backgroundColor: "#FFF2CC" }}></td>
                 </tr>
 
                 <tr>
@@ -162,8 +218,8 @@ const Summary = () => {
                     style={{
                       fontWeight: "bold",
                       fontFamily: "sans-serif",
-                      fontSize: "1.2rem",
-                      backgroundColor:'#dad9d9'
+                      fontSize: "1rem",
+                      backgroundColor: "#D9D9D9",
                     }}
                   >
                     GSS ITEMS COSTING SUMMARY
@@ -185,10 +241,14 @@ const Summary = () => {
                 </tr>
 
                 <tr>
-                  <td style={{ backgroundColor: "#f6e899" }}>2. Total GSS Equipment Cost</td>
-                  <td style={{ backgroundColor: "#f6e899" }}></td>
-                  <td style={{ backgroundColor: "#f6e899" }}></td>
-                  <td style={{ backgroundColor: "#f6e899" }}></td>
+                  <td
+                    style={{ backgroundColor: "#FFF2CC", fontWeight: "bold" }}
+                  >
+                    2. Total GSS Equipment Cost
+                  </td>
+                  <td style={{ backgroundColor: "#FFF2CC" }}></td>
+                  <td style={{ backgroundColor: "#FFF2CC" }}></td>
+                  <td style={{ backgroundColor: "#FFF2CC" }}></td>
                 </tr>
 
                 <tr>
@@ -196,9 +256,8 @@ const Summary = () => {
                     style={{
                       fontWeight: "bold",
                       fontFamily: "sans-serif",
-                      fontSize: "1rem",
-                      backgroundColor: "#ead34d"
-                      
+                      fontSize: "0.8rem",
+                      backgroundColor: "#ead34d",
                     }}
                   >
                     TOTAL PLANT COST (1+2)
@@ -206,7 +265,6 @@ const Summary = () => {
                   <td style={{ backgroundColor: "#ead34d" }}></td>
                   <td style={{ backgroundColor: "#ead34d" }}></td>
                   <td style={{ backgroundColor: "#ead34d" }}></td>
-                  
                 </tr>
 
                 <tr>
@@ -215,12 +273,12 @@ const Summary = () => {
                       fontWeight: "bold",
                       fontFamily: "sans-serif",
                       fontSize: "1rem",
-                      backgroundColor:'#dad9d9'
+                      backgroundColor: "#D9D9D9",
                     }}
                   >
                     Cost without Module
                   </td>
-                  <td style={{backgroundColor:'#dad9d9'}}></td>
+                  <td style={{ backgroundColor: "#D9D9D9" }}></td>
                   <td></td>
                   <td></td>
                 </tr>
