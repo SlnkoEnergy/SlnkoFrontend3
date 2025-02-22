@@ -5,6 +5,7 @@ import "../CSS/file.css";
 import img1 from "../assests/ImgP04_01.png";
 import img2 from "../assests/ImgP04_02.png";
 import img3 from "../assests/ImgP04_03.png";
+import img4 from "../assests/photo.jpg";
 const Page4 = () => {
   return (
     <>
@@ -267,10 +268,12 @@ const Page4 = () => {
                   }}
                   className="ul-item"
                 >
-                  <li style={{ marginBottom: "30px" }}>Cost & Risk Analysis</li>
-                  <li style={{ marginBottom: "30px" }}>Detailed Site Survey</li>
-                  <li style={{ marginBottom: "30px" }}>Engineering Design</li>
-                  <li>DPR Preparation</li>
+                  <li style={{ marginBottom: "20px" }}>Cost & Risk Analysis</li>
+                  <li style={{ marginBottom: "20px" }}>Detailed Site Survey</li>
+                  <li style={{ marginBottom: "20px" }}>DPR Preparation</li>
+                  <li style={{ marginBottom: "20px" }}>Bank Loan Support</li>
+<li >Engineering Design</li>
+                  
                 </ul>
               </Box>
             </Box>
@@ -382,6 +385,60 @@ const Page4 = () => {
                   <li style={{ marginBottom: "30px" }}>Inspection</li>
                   <li style={{ marginBottom: "30px" }}>Quality Control</li>
                   <li>Daily Updates</li>
+                </ul>
+              </Box>
+            </Box>
+
+            <Box
+              sx={{
+                width: "100%",
+                height: "100%",
+                padding: "0 15px",
+              }}
+            >
+              <Box
+                sx={{
+                  height: "500px",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  borderRadius: "100em 100em 0em 0em",
+                  backgroundColor: "#F0EFEF",
+                  "@media print": {
+                    WebkitPrintColorAdjust: "exact",
+                    printColorAdjust: "exact",
+                    height:'420px'
+                  },
+                }}
+              >
+                <img
+                  style={{
+                    filter: "drop-shadow(0 0 0.50rem black)",
+                    borderRadius: "50%",
+                  }}
+                  alt="img4"
+                  src={img4}
+                  width={"200px"}
+                  height={"200px"}
+                  className="print-img1"
+                />
+                <ul
+                  style={{
+                    listStyleType: "disc",
+                    color: "black",
+                    fontFamily: "serif",
+                    fontSize: "22px",
+                    textAlign: "left",
+                    paddingLeft: "0 0 0 40px",
+                    gap: 10,
+                  }}
+                  className="ul-item"
+                >
+                  <li style={{ marginBottom: "30px" }}>Liasoning</li>
+                  <li style={{ marginBottom: "30px" }}>Testing</li>
+                  <li style={{ marginBottom: "30px" }}>Commissioning</li>
+                  <li>Maintenance Support</li>
                 </ul>
               </Box>
             </Box>

@@ -6,6 +6,28 @@ import "../CSS/file.css";
 const Page6 = () => {
   return (
     <>
+      <Box
+              sx={{
+                position: "absolute", // Changed from "fixed"
+                left: {
+                  xs: "63.5%",
+                  sm: "58.8%",
+                  md: "64.5%",
+                  lg: "59.59%",
+                  xl: "59.59%",
+                },
+                backgroundColor: "#F2F4F5",
+                height: { xs: "1335px", sm: "1165px", md: "1190px", lg: "1230px", xl: "1183px" },
+                width: { xs: "30%", sm: "30%", md: "20%", lg: "20%", xl: "20%" },
+                zIndex: -1,
+                "@media print": {
+                  height: "297mm !important",
+                  left: "67.59%",
+                  width: "40%",
+                },
+              }}
+            ></Box>
+
       <Grid
         sx={{
           width: "100%",
@@ -23,24 +45,9 @@ const Page6 = () => {
           },
         }}
       >
-        <Box
-          sx={{
-            position: "absolute",
-            left: "59.59%",
-            backgroundColor: "#F2F4F5",
-            height: "127.5%",
-            width: "20%",
-            zIndex: -1,
-            "@media print": {
-              height: "297mm !important",
-              left: "67.59%",
-              width: "40%",
-            },
-          }}
-        ></Box>
         <Grid
           sx={{
-            width: "60%",
+            width: { xs: "90%", sm: "80%", md: "70%", lg: "60%", xl: "60%" },
             height: "100%",
             border: "2px solid blue",
             padding: "20px",
@@ -54,30 +61,42 @@ const Page6 = () => {
             sx={{
               display: "flex",
               width: "100%",
-              alignItems: "flex-end",
-              gap: 2,
             }}
           >
-            <img
-              className="logo-img2"
-              width={"300px"}
-              height={"180px"}
-              alt="logo"
+            <Box
+              component="img"
               src={logo}
+              alt="logo"
+              sx={{
+                width: { xs: "150px", sm: "200px", md: "250px", lg: "300px" },
+                height: "auto",
+              }}
             />
 
-            <hr
-              style={{
-                width: "60%",
-                borderTop: "3px solid #0f4C7f", // Keeps the line visible
-                margin: "36px 0",
-                boxShadow: "none !important", // Force removal of any shadow
-                background: "transparent !important", // Ensure no background color
-                border: "none !important", // Ensure no border shadow
-                // Remove any outline if applied
+            <Box
+              sx={{
+                width: {
+                  xs: "60%",
+                  sm: "50%",
+                  md: "50%",
+                  lg: "50%",
+                  xl: "60%",
+                },
+                borderBottom: "3px solid #0f4C7f",
+                margin: {
+                  xs: "10px auto",
+                  sm: "20px auto",
+                  md: "26px auto",
+                  lg: "30px auto",
+                  xl: "30px auto",
+                },
+                "@media print": {
+                  width: "55%",
+                  margin: "22px auto",
+                  borderBottom: "2px solid #0f4C7f",
+                },
               }}
-              className="hr-line3"
-            />
+            ></Box>
           </Box>
 
           <br />
@@ -92,12 +111,17 @@ const Page6 = () => {
           >
             <Typography
               textColor={"#56A4DA"}
-              fontSize={"3rem"}
+              fontSize={{
+                xs: "1.5rem",
+                sm: "2rem",
+                md: "2.5rem",
+                lg: "3rem",
+                xl: "3.5rem",
+              }}
               fontWeight={"bolder"}
               sx={{
                 textDecoration: "underline 3px rgb(243, 182, 39)",
                 textUnderlineOffset: "8px",
-
                 "@media print": {
                   fontSize: "1.5rem",
                 },
@@ -123,7 +147,13 @@ const Page6 = () => {
               }}
             >
               <Typography
-                fontSize={"1.4rem"}
+                fontSize={{
+                  xs: "0.9rem",
+                  sm: "1rem",
+                  md: "1.1rem",
+                  lg: "1.2rem",
+                  xl: "1.4rem",
+                }}
                 fontFamily={"serif"}
                 fontWeight={500}
                 sx={{
@@ -143,7 +173,13 @@ const Page6 = () => {
 
             <Box>
               <Typography
-                fontSize={"1.5rem"}
+                fontSize={{
+                  xs: "0.9rem",
+                  sm: "1rem",
+                  md: "1.1rem",
+                  lg: "1.2rem",
+                  xl: "1.4rem",
+                }}
                 fontFamily={"sans-serif"}
                 fontWeight={"400"}
                 sx={{
@@ -160,7 +196,13 @@ const Page6 = () => {
                 }}
               >
                 <Typography
-                  fontSize={"1.3rem"}
+                  fontSize={{
+                    xs: "0.9rem",
+                    sm: "1rem",
+                    md: "1.1rem",
+                    lg: "1.2rem",
+                    xl: "1.4rem",
+                  }}
                   fontWeight={"500"}
                   fontFamily={"serif"}
                   sx={{
@@ -173,7 +215,13 @@ const Page6 = () => {
                   “Design & Documents List”)
                 </Typography>
                 <Typography
-                  fontSize={"1.3rem"}
+                  fontSize={{
+                    xs: "0.9rem",
+                    sm: "1rem",
+                    md: "1.1rem",
+                    lg: "1.2rem",
+                    xl: "1.4rem",
+                  }}
                   fontWeight={"500"}
                   fontFamily={"serif"}
                   sx={{
@@ -195,7 +243,13 @@ const Page6 = () => {
             <Typography
               fontFamily={"sans-serif"}
               fontWeight={"500"}
-              fontSize={"1.7rem"}
+              fontSize={{
+                xs: "1.2rem",
+                sm: "1.3rem",
+                md: "1.4rem",
+                lg: "1.5rem",
+                xl: "1.7rem",
+              }}
               sx={{
                 "@media print": {
                   fontSize: "1rem",
@@ -275,15 +329,14 @@ const Page6 = () => {
                 </tr>
               </tbody>
             </Table>
-            </Sheet>
-            <br />
-            <Sheet
+          </Sheet>
+          <br />
+          <Sheet
             sx={{
               width: "100%",
               backgroundColor: "white",
             }}
           >
-           
             <Table className="table-header1">
               <thead>
                 <tr>

@@ -6,6 +6,28 @@ import "../CSS/file.css";
 const Page7 = () => {
   return (
     <>
+      <Box
+        sx={{
+          position: "absolute", // Changed from "fixed"
+          left: {
+            xs: "63.5%",
+            sm: "58.8%",
+            md: "64.5%",
+            lg: "59.59%",
+            xl: "59.59%",
+          },
+          backgroundColor: "#F2F4F5",
+          height: { xs: "1335px", sm: "1165px", md: "1190px", lg: "1183px", xl: "1183px" },
+          width: { xs: "30%", sm: "30%", md: "20%", lg: "20%", xl: "20%" },
+          zIndex: -1,
+          "@media print": {
+            height: "297mm !important",
+            left: "67.59%",
+            width: "40%",
+          },
+        }}
+      ></Box>
+
       <Grid
         sx={{
           width: "100%",
@@ -23,24 +45,9 @@ const Page7 = () => {
           },
         }}
       >
-        <Box
-          sx={{
-            position: "absolute",
-            left: "59.59%",
-            backgroundColor: "#F2F4F5",
-            height: "128%",
-            width: "20%",
-            zIndex: -1,
-            "@media print": {
-              height: "297mm !important",
-              left: "67.59%",
-              width: "40%",
-            },
-          }}
-        ></Box>
         <Grid
           sx={{
-            width: "60%",
+            width: { xs: "90%", sm: "80%", md: "70%", lg: "60%", xl: "60%" },
             height: "100%",
             border: "2px solid blue",
             padding: "20px",
@@ -54,30 +61,42 @@ const Page7 = () => {
             sx={{
               display: "flex",
               width: "100%",
-              alignItems: "flex-end",
-              gap: 2,
             }}
           >
-            <img
-              className="logo-img2"
-              width={"300px"}
-              height={"180px"}
-              alt="logo"
+            <Box
+              component="img"
               src={logo}
+              alt="logo"
+              sx={{
+                width: { xs: "150px", sm: "200px", md: "250px", lg: "300px" },
+                height: "auto",
+              }}
             />
 
-            <hr
-              style={{
-                width: "60%",
-                borderTop: "3px solid #0f4C7f", // Keeps the line visible
-                margin: "40px 0",
-                boxShadow: "none !important", // Force removal of any shadow
-                background: "transparent !important", // Ensure no background color
-                border: "none !important", // Ensure no border shadow
-                // Remove any outline if applied
+            <Box
+              sx={{
+                width: {
+                  xs: "60%",
+                  sm: "50%",
+                  md: "50%",
+                  lg: "50%",
+                  xl: "60%",
+                },
+                borderBottom: "3px solid #0f4C7f",
+                margin: {
+                  xs: "10px auto",
+                  sm: "20px auto",
+                  md: "26px auto",
+                  lg: "30px auto",
+                  xl: "30px auto",
+                },
+                "@media print": {
+                  width: "55%",
+                  margin: "22px auto",
+                  borderBottom: "2px solid #0f4C7f",
+                },
               }}
-              className="hr-line3"
-            />
+            ></Box>
           </Box>
           <Sheet
             sx={{
@@ -88,8 +107,8 @@ const Page7 = () => {
             <Table className="table-header1">
               <tbody>
                 <tr>
-                  <td style={{ width: "8%"}}>5</td>
-                  <td >Module Mounting Structure (MMS) GA and part Drawing</td>
+                  <td style={{ width: "8%" }}>5</td>
+                  <td>Module Mounting Structure (MMS) GA and part Drawing</td>
                   <td style={{ width: "18%" }}>Phase-01</td>
                 </tr>
 
@@ -221,10 +240,10 @@ const Page7 = () => {
                       fontWeight="300"
                       fontFamily="serif"
                       sx={{
-                      '@media print':{
-                        fontSize:'1.1rem'
-                      }
-                    }}
+                        "@media print": {
+                          fontSize: "1.1rem",
+                        },
+                      }}
                     >
                       <strong>NOTE:</strong> All the above design and documents
                       are the general ones required for execution. However, if

@@ -149,8 +149,8 @@ const Page9 = () => {
                 <tbody>
                   <tr>
                     <td>
-                      Detailed Technical Site Survey as per Engineering
-                      Requirements.
+                    Engineering, Procurement, Construction and Management Services as per above scope of work
+
                     </td>
                     <td>3 MW AC</td>
                     <td>INR</td>
@@ -170,15 +170,13 @@ const Page9 = () => {
                   }}
                   className="ul-item"
                 >
-                  We have considered 3 weeks the complete site execution work,
-                  if any delay in site execution additional charges to be
-                  disscussed and finalized again.
+                 We have considered 12-14 weeks the complete site execution work, if any delay in site execution additional charges to be discussed and finalized again.
                 </li>
                 <li
                   className="ul-item"
                   style={{ fontFamily: "sans-serif", fontSize: "1.3rem" }}
                 >
-                  GST @1 % is Additional as actual.
+                  GST @18% is Additional as actual.
                 </li>
               </ul>
             </Box>
@@ -214,7 +212,7 @@ const Page9 = () => {
               <Table className="table-header-page9">
                 <thead>
                   <tr>
-                    <th>Description</th>
+                    <th>Milestone</th>
                     <th style={{ width: "20%" }}>
                       Payment <br /> Percentage
                     </th>
@@ -252,7 +250,7 @@ const Page9 = () => {
                   <tr>
                     <td>
                       Before testing and charging of Plant before
-                      commissioningAdvance along with work order
+                      commissioning
                     </td>
                     <td>5% of the Project Cost</td>
                   </tr>

@@ -97,10 +97,14 @@ const Page16 = () => {
               sx={{
                 textDecoration: "underline 2px rgb(243, 182, 39)",
                 textUnderlineOffset: "8px",
+                '@media print':{
+                  fontSize:'2rem'
+                }
               }}
               textColor={"#56A4DA"}
               fontSize={"3rem"}
               fontWeight={"bolder"}
+              
             >
               TERMS
             </Typography>
@@ -113,60 +117,119 @@ const Page16 = () => {
           >
             <Typography
               margin={"0 0 20px"}
-              fontSize={"2rem"}
+              fontSize={"1.5rem"}
               fontWeight={400}
               fontFamily={"serif"}
               sx={{
                 '@media print':{
-                  fontSize:'1.8rem'
+                  fontSize:'1.4rem'
                 }
               }}
             >
-              a) All the charges to be paid for Authority approval (direct or
-              indirect) shall be paid by the client.
+
+a. All the charges to be paid for Authority approval (direct or indirect) shall be paid by the
+client.
+
+              
             </Typography>
             <Typography
               margin={"0 0 20px"}
-              fontSize={"2rem"}
+              fontSize={"1.5rem"}
               fontWeight={400}
               fontFamily={"serif"}
               sx={{
                 '@media print':{
-                  fontSize:'1.8rem'
+                  fontSize:'1.4rem'
                 }
               }}
             >
-              b) Client shall provide a clear ground in workable condition
-              before start of the project.
+              b. Client shall provide a clear ground in workable condition before start of the project.
+
             </Typography>
             <Typography
               margin={"0 0 20px"}
-              fontSize={"2rem"}
+              fontSize={"1.5rem"}
               fontWeight={400}
               fontFamily={"serif"}
               sx={{
                 '@media print':{
-                  fontSize:'1.8rem'
+                  fontSize:'1.4rem'
                 }
               }}
             >
-              c) Site security, material security and all kind of insurance is
-              in the scope of client.
+              c. Site security, material security and all kinds of insurance is in the scope of client.
+
             </Typography>
             <Typography
               margin={"0 0 20px"}
-              fontSize={"2rem"}
+              fontSize={"1.5rem"}
               fontWeight={400}
               fontFamily={"serif"}
               sx={{
                 '@media print':{
-                  fontSize:'1.8rem'
+                  fontSize:'1.4rem'
                 }
               }}
             >
-              d) Client shall timely make payment. Any delay due to non-payment
-              or late payment shall be client's responsibility.
+              d. All the liasoning paper works shall be done by SLNKO, however all the direct or indirect 
+payments shall be made by client at actual.
+
             </Typography>
+
+            <Typography
+              margin={"0 0 20px"}
+              fontSize={"1.5rem"}
+              fontWeight={400}
+              fontFamily={"serif"}
+              sx={{
+                '@media print':{
+                  fontSize:'1.4rem'
+                }
+              }}
+            >
+               e. Client shall timely make payment. Any delay due to non-payment or late payment shall 
+be the client’s responsibility.
+
+
+            </Typography>
+
+            <Typography
+              margin={"0 0 20px"}
+              fontSize={"1.5rem"}
+              fontWeight={400}
+              fontFamily={"serif"}
+              sx={{
+                '@media print':{
+                  fontSize:'1.4rem'
+                }
+              }}
+            >
+             f. The above quantity is tentative and based on our previous records of sites which have
+been executed. It will change based on actual site conditions & land profile which shall 
+be analyzed after detailed engineering.
+
+
+            </Typography>
+
+
+            <Typography
+              margin={"0 0 20px"}
+              fontSize={"1.5rem"}
+              fontWeight={400}
+              fontFamily={"serif"}
+              sx={{
+                '@media print':{
+                  fontSize:'1.4rem'
+                }
+              }}
+            >
+              g. The above rates are based on recent market conditions and may change in case of 
+              change in law or market conditions.
+
+            </Typography>
+
+
+           
           </Box>
 
           <Box

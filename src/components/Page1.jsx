@@ -8,6 +8,7 @@ import logo2 from "../assests/page1_back.jpeg";
 import logo3 from "../assests/phone_icon (2).png";
 import logo4 from "../assests/email_icon (2).png";
 import Divider from "@mui/joy/Divider";
+import "../CSS/file.css";
 
 const Page1 = () => {
   return (
@@ -20,7 +21,7 @@ const Page1 = () => {
             height: "297mm",
           },
           width: "100%",
-          height: "140vh",
+          height: "100%",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -33,8 +34,8 @@ const Page1 = () => {
               width: "210mm",
               height: "297mm",
             },
-            width: "50%",
-            height: "130vh",
+            width: { sm: "80%", md: "70%", lg: "60%", xl: "50%" },
+            height: "100%",
             border: "2px solid blue",
             display: "flex",
             alignItems: "center",
@@ -59,13 +60,10 @@ const Page1 = () => {
                 justifyContent: "center",
                 alignItems: "center",
                 padding: "15px",
-                height: "10vh",
-                "@media print": {
-                  height: "10%",
-                },
+                height: "10%",
               }}
             >
-              <img width={"50%"} height={'100%'} alt="logo" src={logo}></img>
+              <img width={"50%"} height={"100%"} alt="logo" src={logo}></img>
             </Box>
 
             {/* Main section with background image, branding, and text */}
@@ -77,14 +75,12 @@ const Page1 = () => {
                 backgroundImage: `url(${logo2})`,
                 backgroundRepeat: "no-repeat",
                 width: "100%",
-                height: "100vh",
-                backgroundSize: "cover",
+                height: { md: "80%", lg: "100%", xl: "80%" },
+                backgroundSize: "100%",
                 "@media print": {
                   backgroundImage: `url(${logo2})`,
                   backgroundRepeat: "no-repeat",
                   backgroundSize: "cover",
-                  WebkitPrintColorAdjust: "exact",
-                  printColorAdjust: "exact",
                   height: "78%",
                   width: "100%",
                 },
@@ -104,130 +100,153 @@ const Page1 = () => {
                 <Typography
                   sx={{
                     "@media print": {
-                      fontSize: "18px",
+                      fontSize: "1.125rem",
                     },
                   }}
                   paddingTop={"50px"}
-                  fontSize={"20px"}
+                  fontSize={{
+                    sm: "0.85rem",
+                    md: "0.95rem",
+                    lg: "1.1rem",
+                    xl: "1.25rem",
+                  }}
                   fontWeight={"500"}
                   component={"span"}
                 >
-                  INDIA'S LARGEST AND MOST TRUSTED BRAND FOR KUSUM
+                  INDIA'S MOST TRUSTED BRAND FOR KUSUM
                 </Typography>
                 <Typography
-                  fontSize={"1.25rem"}
+                  fontSize={{
+                    sm: "0.85rem",
+                    md: "0.95rem",
+                    lg: "1.1rem",
+                    xl: "1.25rem",
+                  }}
                   fontWeight={"500"}
                   component={"span"}
                   sx={{
                     "@media print": {
-                      fontSize: "18px",
+                      fontSize: "1.125rem",
                     },
                   }}
                 >
                   PROJECTS
                 </Typography>
                 {/* Main commercial text */}
-                <Typography
-                  paddingTop={"320px"}
-                  letterSpacing={"2px"}
-                  fontSize={"45px"}
-                  fontWeight={"300"}
-                  textColor={"white"}
-                  sx={{
-                    "@media print": {
-                      fontSize: "40px",
-                      paddingTop: "310px",
-                    },
-                  }}
-                >
-                  COMMERCIAL
-                </Typography>
-                {/* Offer text */}
-                <Typography
-                  sx={{
-                    filter: "drop-shadow(0 0 0.50rem white)",
-                    fontWeight: "bolder",
-                    letterSpacing: "18px",
-                    marginTop: "-40px",
-                    "@media print": {
-                      fontSize: "100px",
-                    },
-                  }}
-                  fontSize={"120px"}
-                  fontWeight={"300"}
-                  textColor={"#0f4C7f"}
-                >
-                  OFFER
-                </Typography>
-                {/* "Prepared for" box */}
-                <Box
-                  sx={{
-                    backgroundColor: "white",
-                    borderRadius: "20px",
-                    width: "40%",
-                    margin: "2px",
-                    "@media print": {
-                      margin: "1px",
-                    },
-                  }}
-                >
-                  <Typography
-                    sx={{
-                      fontSize: "25px",
-                      fontWeight: "600",
-                      textAlign: "center",
-                      "@media print": {
-                        fontSize: "20px",
-                        fontWeight: "500",
-                      },
-                    }}
-                  >
-                    PREPARED FOR
-                  </Typography>
-                </Box>
-                {/* Ensure sections */}
                 <Box
                   sx={{
                     display: "flex",
                     justifyContent: "center",
-                    width: "100%",
-                    paddingTop: "110px",
-                    "@media print": {
-                      paddingTop: "90px",
-                    },
+                    alignItems: "center",
+                    flexDirection: "column",
                   }}
                 >
-                  <List orientation="horizontal" >
-                    {[
-                      "ENSURE QUALITY",
-                      "ENSURE SUSTAINABILITY",
-                      "ENSURE SUPPORT",
-                    ].map((item, index) => (
-                      <ListItem
-                        key={index}
-                        sx={{ display: "flex", alignItems: "center" }}
-                      >
-                        <ListItemDecorator
-                          sx={{ minWidth: "auto", mr: 0.5, color: "black" }}
-                        >
-                          •
-                        </ListItemDecorator>
-                        <Typography
-                          sx={{ fontWeight: "600",
-                           '@media print':{
-                             fontSize:'0.9rem'
-                           }
+                  <Typography
+                    paddingTop={{
+                      xs: "140px",
+                      sm: "150px",
+                      md: "200px",
+                      lg: "250px",
+                      xl: "320px",
+                    }}
+                    letterSpacing={"2px"}
+                    fontSize={{ md: "2rem", lg: "2rem", xl: "2.8125rem" }}
+                    fontWeight={"300"}
+                    textColor={"white"}
+                    sx={{
+                      "@media print": {
+                        fontSize: "2.5rem",
+                        paddingTop: "305px",
+                      },
+                    }}
+                  >
+                    TECHNO
+                  </Typography>
+                  
+                  
+                  <Typography
+                    
+                    letterSpacing={"2px"}
+                    fontSize={{ md: "2rem", lg: "2rem", xl: "2.8125rem" }}
+                    fontWeight={"300"}
+                    textColor={"white"}
+                    sx={{
+                      "@media print": {
+                        fontSize: "2.5rem",
+                        
+                      },
+                    }}
+                  >
+                    COMMERCIAL
+                  </Typography>
+                  {/* Offer text */}
+                  <Typography
+                    sx={{
+                      filter: "drop-shadow(0 0 0.50rem white)",
+                      fontWeight: "bolder",
+                      letterSpacing: "18px",
+                      marginTop: "-40px",
+                      "@media print": {
+                        fontSize: "100px",
+                      },
+                    }}
+                    fontSize={{ md: "6rem", lg: "6rem", xl: "7.5rem" }}
+                    fontWeight={"300"}
+                    textColor={"#0f4C7f"}
+                  >
+                    OFFER
+                  </Typography>
+                  {/* "Prepared for" box */}
+                  
 
-                           }}
-                          textColor={"black"}
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "center",
+                      width: "100%",
+                      paddingTop: "90px",
+                      "@media print": {
+                        paddingTop: "90px",
+                      },
+
+                      "@media (min-width: 1536px) and (max-width: 1750px)": {
+                        paddingTop: "40px",
+                      },
+                    }}
+                  >
+                    <List orientation="horizontal">
+                      {[
+                        "ENSURE QUALITY",
+                        "ENSURE SUSTAINABILITY",
+                        "ENSURE SUPPORT",
+                      ].map((item, index) => (
+                        <ListItem
+                          key={index}
+                          sx={{ display: "flex", alignItems: "center" }}
                         >
-                          {item}
-                        </Typography>
-                      </ListItem>
-                    ))}
-                  </List>
+                          <ListItemDecorator
+                            sx={{ minWidth: "auto", mr: 0.5, color: "black" }}
+                          >
+                            •
+                          </ListItemDecorator>
+                          <Typography
+                            sx={{
+                              fontWeight: "600",
+                              fontSize: { md: "0.9rem", xl: "1rem" },
+                              "@media print": {
+                                fontSize: "0.9rem",
+                              },
+                            }}
+                            textColor={"black"}
+                          >
+                            {item}
+                          </Typography>
+                        </ListItem>
+                      ))}
+                    </List>
+                  </Box>
                 </Box>
-                
+                {/* Ensure sections */}
               </Box>
             </Box>
 
@@ -236,11 +255,9 @@ const Page1 = () => {
               sx={{
                 display: "flex",
                 flexDirection: "row",
-                paddingTop: "40px",
+                paddingTop: "20px",
                 "@media print": {
                   paddingTop: "10px",
-                  WebkitPrintColorAdjust: "exact",
-                  printColorAdjust: "exact",
                 },
               }}
             >
@@ -280,12 +297,20 @@ const Page1 = () => {
           <Box
             sx={{
               width: "30%",
-              height: "100%",
+
+              "@media (min-width: 1536px) and (max-width: 1750px)": {
+                height: "1050px",
+              },
+              "@media (min-width: 1750px)": {
+                height: "1190px",
+              },
+              "@media (min-width:1196px) and (max-width: 1350px)": {
+                height: "1100px",
+              },
               backgroundColor: "#0f4C7f",
               "@media print": {
                 backgroundColor: "#0f4C7f",
-                WebkitPrintColorAdjust: "exact",
-                printColorAdjust: "exact",
+                height: "1128px",
               },
             }}
           >
@@ -293,11 +318,15 @@ const Page1 = () => {
               sx={{
                 transform: "rotate(-90deg)",
                 transformOrigin: "center",
-                fontSize: "120px",
+                fontSize: {xs:'4rem',sm:'5rem',md:'5.5rem',lg:'6.5rem',xl:"7.5rem"},
                 marginTop: "350px",
                 letterSpacing: "8px",
                 fontWeight: "bold",
                 opacity: "0.3",
+                
+                '@media print':{
+                  fontSize:'7.5rem'
+                }
               }}
               textColor={"#56A4DA"}
               variant="h1"
@@ -308,11 +337,18 @@ const Page1 = () => {
               sx={{
                 transform: "rotate(-90deg)",
                 transformOrigin: "center",
-                fontSize: "120px",
+                fontSize: {xs:'4rem',sm:'5rem',md:'5.5rem',lg:'6.5rem',xl:"7.5rem"},
                 marginTop: "350px",
                 letterSpacing: "8px",
                 fontWeight: "bold",
                 opacity: "0.3",
+                
+                '@media print':{
+                  fontSize:'7.5rem'
+                },
+                "@media (min-width: 1536px) and (max-width: 1750px)": {
+                  marginTop: "300px",
+                },
               }}
               textColor={"#56A4DA"}
               variant="h1"
