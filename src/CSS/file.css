@@ -80,6 +80,14 @@
   .table-header-Summary th{
     font-size: 1.1rem !important;
   }
+
+  .table-header th{
+    font-size: 1.005rem !important;
+  }
+
+  .table-header td{
+    font-size: 1.005rem !important;
+  }
 }
 
 /* styles.css */
@@ -93,7 +101,7 @@
 
 .table-header th {
   vertical-align: middle !important; /* Corrected */
-  font-size: 1rem !important;
+  font-size: 1rem ;
   font-weight: bold;
   background-color: #0f4c7f !important;
   color: #95aac9 !important;
@@ -104,7 +112,7 @@
 
 .table-header td {
   vertical-align: middle !important; /* Corrected */
-  font-size: 0.8rem !important;
+  font-size: 0.8rem ;
   font-family: sans-serif !important;
   text-align: center !important;
   border: 1px solid #dee2e6 !important; /* Ensures text is centered */

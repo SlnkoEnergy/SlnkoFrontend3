@@ -131,11 +131,13 @@ const Page2 = () => {
                   "@media print": {
                     fontWeight: "500",
                     fontSize: "1.3rem",
+                    textAlign:'justify'
                   },
                 }}
                 marginBottom="1rem"
                 fontSize="1.6rem"
                 fontWeight="500"
+                textAlign={'justify'}
               >
                 SLnko is a one-stop platform offering Engineering, Vendor
                 Management, and Project Management Services. Our solutions can

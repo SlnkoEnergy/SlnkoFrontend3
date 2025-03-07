@@ -1,14 +1,14 @@
 import React from "react";
 import Box from "@mui/joy/Box";
 import Typography from "@mui/joy/Typography";
-import { List, ListItem, ListItemDecorator } from "@mui/joy";
+import { Button, List, ListItem, ListItemDecorator } from "@mui/joy";
 import logo from "../assests/page1_logo.png";
-import logo1 from "../assests/slnko.png";
-import logo2 from "../assests/page1_back.jpeg";
+import logo1 from "../assests/4. White Slnko Logo.png";
+import logo2 from "../assests/Untitled-1-01.jpg";
 import logo3 from "../assests/phone_icon (2).png";
 import logo4 from "../assests/email_icon (2).png";
+import logo5 from "../assests/email_icon (2).png";
 import Divider from "@mui/joy/Divider";
-import "../CSS/file.css";
 
 const Page1 = () => {
   return (
@@ -21,7 +21,7 @@ const Page1 = () => {
             height: "297mm",
           },
           width: "100%",
-          height: "100%",
+          height: "125vh",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -34,9 +34,9 @@ const Page1 = () => {
               width: "210mm",
               height: "297mm",
             },
-            width: { sm: "80%", md: "70%", lg: "60%", xl: "50%" },
+            width: "50%",
             height: "100%",
-            border: "2px solid blue",
+            border: "2px solid #0f4C7f",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -63,7 +63,13 @@ const Page1 = () => {
                 height: "10%",
               }}
             >
-              <img width={"50%"} height={"100%"} alt="logo" src={logo}></img>
+              <img
+                width={"50%"}
+                height={"100%"}
+                alt="logo"
+                src={logo}
+                loading="lazy"
+              />
             </Box>
 
             {/* Main section with background image, branding, and text */}
@@ -92,10 +98,11 @@ const Page1 = () => {
                   justifyContent: "center",
                   alignItems: "center",
                   flexDirection: "column",
+                  marginTop:'15px'
                 }}
               >
                 {/* Secondary logo */}
-                <img width={"40%"} alt="logo" src={logo1} />
+                <img width={"25%"} alt="logo" src={logo1} loading="lazy" />
                 {/* Branding Text */}
                 <Typography
                   sx={{
@@ -156,16 +163,14 @@ const Page1 = () => {
                     sx={{
                       "@media print": {
                         fontSize: "2.5rem",
-                        paddingTop: "305px",
+                        paddingTop: "320px",
                       },
                     }}
                   >
                     TECHNO
                   </Typography>
-                  
-                  
+
                   <Typography
-                    
                     letterSpacing={"2px"}
                     fontSize={{ md: "2rem", lg: "2rem", xl: "2.8125rem" }}
                     fontWeight={"300"}
@@ -173,7 +178,6 @@ const Page1 = () => {
                     sx={{
                       "@media print": {
                         fontSize: "2.5rem",
-                        
                       },
                     }}
                   >
@@ -197,7 +201,6 @@ const Page1 = () => {
                     OFFER
                   </Typography>
                   {/* "Prepared for" box */}
-                  
 
                   <Box
                     sx={{
@@ -225,7 +228,7 @@ const Page1 = () => {
                           sx={{ display: "flex", alignItems: "center" }}
                         >
                           <ListItemDecorator
-                            sx={{ minWidth: "auto", mr: 0.5, color: "black" }}
+                            sx={{ minWidth: "auto", mr: 0.5, color: "white" }} // Changed to white
                           >
                             •
                           </ListItemDecorator>
@@ -236,8 +239,8 @@ const Page1 = () => {
                               "@media print": {
                                 fontSize: "0.9rem",
                               },
+                              color: "white", // Added this to ensure text is white
                             }}
-                            textColor={"black"}
                           >
                             {item}
                           </Typography>
@@ -269,11 +272,11 @@ const Page1 = () => {
                   alignItems: "center",
                 }}
               >
-                <img width="10%" alt="phone" src={logo3} />
+                <img width="10%" alt="phone" src={logo3} loading="lazy" />
                 <Divider
                   sx={{ width: "50%", alignSelf: "center", marginY: 2 }}
                 />
-                <Typography>+91 9123153939</Typography>
+                <Typography>+91 8062358958</Typography>
               </Box>
 
               <Box
@@ -284,11 +287,35 @@ const Page1 = () => {
                   alignItems: "center",
                 }}
               >
-                <img width={"10%"} alt="phone" src={logo4} />
+                <img width={"10%"} alt="phone" src={logo4} loading="lazy" />
                 <Divider
                   sx={{ width: "50%", alignSelf: "center", marginY: 2 }}
                 />
                 <Typography>info@slnkoenergy.com</Typography>
+              </Box>
+
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <img width={"10%"} alt="phone" src={logo5} loading="lazy" />
+                <Divider
+                  sx={{ width: "50%", alignSelf: "center", marginY: 2 }}
+                />
+                <Typography sx={{ cursor: "pointer" }}>
+                  <a
+                    href="https://www.linkedin.com/company/slnkoenergy/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ textDecoration: "none", color: "inherit" }}
+                  >
+                    company/slnkoenergy
+                  </a>
+                </Typography>
               </Box>
             </Box>
           </Box>
@@ -318,15 +345,21 @@ const Page1 = () => {
               sx={{
                 transform: "rotate(-90deg)",
                 transformOrigin: "center",
-                fontSize: {xs:'4rem',sm:'5rem',md:'5.5rem',lg:'6.5rem',xl:"7.5rem"},
+                fontSize: {
+                  xs: "4rem",
+                  sm: "5rem",
+                  md: "5.5rem",
+                  lg: "6.5rem",
+                  xl: "7.5rem",
+                },
                 marginTop: "350px",
                 letterSpacing: "8px",
                 fontWeight: "bold",
                 opacity: "0.3",
-                
-                '@media print':{
-                  fontSize:'7.5rem'
-                }
+
+                "@media print": {
+                  fontSize: "7.5rem",
+                },
               }}
               textColor={"#56A4DA"}
               variant="h1"
@@ -337,14 +370,20 @@ const Page1 = () => {
               sx={{
                 transform: "rotate(-90deg)",
                 transformOrigin: "center",
-                fontSize: {xs:'4rem',sm:'5rem',md:'5.5rem',lg:'6.5rem',xl:"7.5rem"},
+                fontSize: {
+                  xs: "4rem",
+                  sm: "5rem",
+                  md: "5.5rem",
+                  lg: "6.5rem",
+                  xl: "7.5rem",
+                },
                 marginTop: "350px",
                 letterSpacing: "8px",
                 fontWeight: "bold",
                 opacity: "0.3",
-                
-                '@media print':{
-                  fontSize:'7.5rem'
+
+                "@media print": {
+                  fontSize: "7.5rem",
                 },
                 "@media (min-width: 1536px) and (max-width: 1750px)": {
                   marginTop: "300px",

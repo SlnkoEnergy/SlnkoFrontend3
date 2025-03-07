@@ -18,11 +18,12 @@ import Page16 from './Page16'
 import Page17 from './Page17'
 import Page18 from './Page18'
 import Summary from './Summary'
+import HandoverSheetForm from './BD/Handoversheet'
 
 const ReferenceList = () => {
   return <>
   <Page1 />
-  <Page2 />
+  {/* <Page2 />
   <Page3 />
   <Page4 />
   <Page5 />
@@ -30,17 +31,18 @@ const ReferenceList = () => {
   <Page7 />
   <Page8 />
   <Page9 />
-  <Reference/>
+  <Reference/> */}
   
-  <Reference2 />
+  {/* <Reference2 />
   <Reference3 />
   <Reference4 />
   <CivilWorks1 />
-  <CivilWorks2 />
-  <Page16 />
+  <CivilWorks2 /> */}
+  {/* <Page16 />
   <Page18 />
   <Page17 />
-  <Summary />
+  <Summary /> */}
+  {/* <HandoverSheetForm /> */}
   </>
 }
 

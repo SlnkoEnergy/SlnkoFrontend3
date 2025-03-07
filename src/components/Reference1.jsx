@@ -17,9 +17,16 @@ const Reference = () => {
       >
         <Grid
           sx={{
-            width: "100%",
+            width: "60%",
             height: "100%",
-            border: "2px solid blue",
+            marginTop: "5%",
+            border: "2px solid #0f4C7f",
+            "@media print": {
+              border: "0px",
+              width: "100%",
+              border: "2px solid #0f4C7f",
+              marginTop:'12%'
+            },
           }}
         >
           <Box
@@ -80,16 +87,19 @@ const Reference = () => {
           <Box
             sx={{
               width: "100%",
-              height: "76vh",
+              height: "100%",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
               margin: "auto",
+              "@media-print": {
+                width: "100%",
+              },
             }}
           >
             <Sheet
               sx={{
-                width: "99.5%",
+                width: "99%",
                 height: "100%",
                 backgroundColor: "white",
               }}
@@ -97,19 +107,20 @@ const Reference = () => {
               <Table className="table-header">
                 <thead>
                   <tr>
-                    <th style={{ width: "2.5%" }}>S.NO.</th>
-                    <th style={{ width: "5.5%" }}>ITEM NAME</th>
-                    <th style={{ width: "6%" }}>RATING</th>
+                    <th style={{ width: "5%" }}>S.NO.</th>
+                    <th style={{ width: "12%" }}>ITEM NAME</th>
+                    <th style={{ width: "10%" }}>RATING</th>
                     <th style={{ width: "20%" }}>SPECIFICATION</th>
-                    <th>UoM</th>
-                    <th>Qty (Int.)</th>
-                    <th>Qty</th>
-                    <th>Rate</th>
+                    <th style={{ width: "5%" }}>UoM</th>
+                    {/* <th>Qty (Int.)</th> */}
+                    <th style={{ width: "8%" }}>Qty</th>
+                    <th style={{ width: "10%" }}>Category</th>
+                    {/* <th>Rate</th>
                     <th>Rate UoM</th>
                     <th>Total Value</th>
                     <th>GST</th>
                     <th>GST Value</th>
-                    <th>Total with GST</th>
+                    <th>Total with GST</th> */}
                   </tr>
                 </thead>
                 <tbody>
@@ -125,14 +136,15 @@ const Reference = () => {
                       Performance Warranty Up to 27/30 Years.
                     </td>
                     <td>Nos.</td>
-                    <td>5214</td>
+                    {/* <td>5214</td> */}
                     <td>5208</td>
-                    <td>15</td>
+                    <td>Solar Inverter</td>
+                    {/* <td>15</td>
                     <td>INR/Wp</td>
                     <td>45309600</td>
                     <td>12%</td>
                     <td>5437152</td>
-                    <td>50746752</td>
+                    <td>50746752</td> */}
                   </tr>
 
                   <tr>
@@ -146,30 +158,32 @@ const Reference = () => {
                       provided by Manufacturer.
                     </td>
                     <td>Nos.</td>
+                    {/* <td>9</td> */}
                     <td>9</td>
-                    <td>9</td>
-                    <td>460000</td>
-                    <td>INR/Nos.</td>
+                    <td>Solar Inverter</td>
+                    {/* <td>460000</td> */}
+                    {/* <td>INR/Nos.</td>
                     <td>4140000</td>
                     <td>12%</td>
                     <td>496800</td>
-                    <td>4636800</td>
+                    <td>4636800</td> */}
                   </tr>
 
                   <tr>
                     <td>3.</td>
                     <td>Module Mounting Structure</td>
                     <td>2PX12 Table</td>
-                    <td></td>
+                    <td>	MMS Shall be designed for wind speed as per IS 875 Part 3 and optimum tilt angle. Galvalume (AZ-150-550MPA) shall conform to IS 15961, Column (YS-250) shall conform to IS 2062 & HDG shall conform to IS 4759.1996 and . Exact Sections shall be decided at the time of detailed engineering. Depth of pile foundation shall be decided after soil tests.</td>
                     <td>Kg</td>
+                    {/* <td>69552</td> */}
                     <td>69552</td>
-                    <td>69552</td>
-                    <td>77</td>
+                    <td>Solar Inverter</td>
+                    {/* <td>77</td>
                     <td>INR/Kg</td>
                     <td>5355504</td>
                     <td>18%</td>
                     <td>963991</td>
-                    <td>6319495</td>
+                    <td>6319495</td> */}
                   </tr>
 
                   <tr>
@@ -181,14 +195,15 @@ const Reference = () => {
                       all other connections
                     </td>
                     <td>Set</td>
+                    {/* <td>1</td> */}
                     <td>1</td>
-                    <td>1</td>
-                    <td>0.20</td>
+                    <td>Solar Inverter</td>
+                    {/* <td>0.20</td>
                     <td>INR/Wp</td>
                     <td>604800</td>
                     <td>18%</td>
                     <td>108864</td>
-                    <td>713664</td>
+                    <td>713664</td> */}
                   </tr>
 
                   <tr>
@@ -207,14 +222,15 @@ const Reference = () => {
                       life expectency of 25 years. Flame retardent, UV resistent
                     </td>
                     <td>m</td>
+                    {/* <td>21168</td> */}
                     <td>21168</td>
-                    <td>21168</td>
-                    <td>37.5</td>
+                    <td>Solar Inverter</td>
+                    {/* <td>37.5</td>
                     <td>INR/m</td>
                     <td>793800</td>
                     <td>18%</td>
                     <td>142884</td>
-                    <td>936684</td>
+                    <td>936684</td> */}
                   </tr>
 
                   <tr>
@@ -229,14 +245,15 @@ const Reference = () => {
                       armouring to be used with minumum 90% area of coverage.
                     </td>
                     <td>m</td>
+                    {/* <td>877.5</td> */}
                     <td>877.5</td>
-                    <td>877.5</td>
-                    <td>935</td>
+                    <td>Solar Inverter</td>
+                    {/* <td>935</td>
                     <td>INR/m</td>
                     <td>820463</td>
                     <td>18%</td>
                     <td>147683</td>
-                    <td>968146</td>
+                    <td>968146</td> */}
                   </tr>
 
                   <tr>
@@ -251,14 +268,15 @@ const Reference = () => {
                       armouring to be used with minumum 90% area of coverage.
                     </td>
                     <td>m</td>
+                    {/* <td>180</td> */}
                     <td>180</td>
-                    <td>180</td>
-                    <td>935</td>
+                    <td>Solar Inverter</td>
+                    {/* <td>935</td>
                     <td>INR/m</td>
                     <td>168300</td>
                     <td>18%</td>
                     <td>30294</td>
-                    <td>198594</td>
+                    <td>198594</td> */}
                   </tr>
                 </tbody>
               </Table>
