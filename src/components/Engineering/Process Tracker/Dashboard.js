@@ -11,14 +11,24 @@ import {
   Option,
   FormControl,
   FormLabel,
+  Input,
 } from "@mui/joy";
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css";
 import img1 from "../../../assests/milestones.png";
 import img2 from "../../../assests/PV.png";
-import img3 from "../../../assests/2.png";
+import img3 from "../../../assests/grounding.png";
+import img4 from "../../../assests/trench-coat.png";
+import img5 from "../../../assests/internet.png";
+import img6 from "../../../assests/air-conditioner.png";
+import img7 from "../../../assests/pay.png";
 const options = ["Done", "Ongoing"];
 const shareOptions = ["Yes", "No"];
 
-const labels = [
+const labelsLot1 = [
   "PV Array Layout",
   "Earthing",
   "Trench Layout",
@@ -27,7 +37,35 @@ const labels = [
   "BOQ",
 ];
 
-const trackerData = [
+const labelsLot2 = [
+  "DC Cable Routing",
+  "AC Cable Routing",
+  "DC/AC SLD",
+  "BAY SLD",
+  "DC Cable Schedule",
+  "Street Light BOQ & Route",
+];
+
+const CivilandMech = [
+  "Survey File",
+  "Pile Marking",
+  "Transformer Foundation",
+  "HT Panel Foundation",
+  "LT Panel Foundation",
+  "Yard Marking",
+  "MCS",
+  "Piling BOQ",
+  "STAAD",
+  "BOQ(MMS)",
+  "MMS GA",
+  "MMS HDG",
+  "MMS FAB",
+  "Inverter Mounting Drawing",
+  "Fencing Layout",
+  "Camera and Street Light BOQ",
+];
+
+const trackerDataLot1 = [
   {
     title: "PV Array Layout",
     status: "Done",
@@ -44,38 +82,241 @@ const trackerData = [
     title: "Trench Layout",
     status: "Done",
     statusColor: "success",
-    image: "https://source.unsplash.com/random/60x60?trench",
+    image: img4,
   },
   {
     title: "Comm. Cable Layout",
     status: "Ongoing",
     statusColor: "warning",
-    image: "https://source.unsplash.com/random/60x60?cable",
+    image: img5,
   },
   {
     title: "AC Cable Schedule",
     status: "Ongoing",
     statusColor: "warning",
-    image: "https://source.unsplash.com/random/60x60?electric",
+    image: img6,
   },
   {
     title: "BOQ",
     status: "Not Started",
     statusColor: "danger",
-    image: "https://source.unsplash.com/random/60x60?doc",
+    image: img7,
   },
 ];
 
-const FormComponent = () => (
+const trackerDataLot2 = [
+  {
+    title: "DC Cable Routing",
+    status: "Done",
+    statusColor: "success",
+    image: img2,
+  },
+  {
+    title: "AC Cable Routing",
+    status: "Done",
+    statusColor: "success",
+    image: img3,
+  },
+  {
+    title: "DC/AC SLD",
+    status: "Done",
+    statusColor: "success",
+    image: img4,
+  },
+  {
+    title: "BAY SLD",
+    status: "Ongoing",
+    statusColor: "warning",
+    image: img5,
+  },
+  {
+    title: "DC Cable Schedule",
+    status: "Ongoing",
+    statusColor: "warning",
+    image: img6,
+  },
+  {
+    title: "Street Light BOQ & Route",
+    status: "Not Started",
+    statusColor: "danger",
+    image: img7,
+  },
+];
+
+const trackerDataCivilandMech = [
+  {
+    title: "Survey File",
+    status: "Done",
+    statusColor: "success",
+    image: img2,
+  },
+  {
+    title: "Pile Marking",
+    status: "Done",
+    statusColor: "success",
+    image: img3,
+  },
+  {
+    title: "Transformer Foundation",
+    status: "Done",
+    statusColor: "success",
+    image: img4,
+  },
+  {
+    title: "HT Panel Foundation",
+    status: "Ongoing",
+    statusColor: "warning",
+    image: img5,
+  },
+  {
+    title: "LT Panel Foundation",
+    status: "Ongoing",
+    statusColor: "warning",
+    image: img6,
+  },
+  {
+    title: "Yard Marking",
+    status: "Not Started",
+    statusColor: "danger",
+    image: img7,
+  },
+  {
+    title: "MCS",
+    status: "Done",
+    statusColor: "success",
+    image: img4,
+  },
+  {
+    title: "Piling BOQ",
+    status: "Ongoing",
+    statusColor: "warning",
+    image: img5,
+  },
+  {
+    title: "STAAD",
+    status: "Ongoing",
+    statusColor: "warning",
+    image: img6,
+  },
+  {
+    title: "BOQ(MMS)",
+    status: "Not Started",
+    statusColor: "danger",
+    image: img7,
+  },
+  {
+    title: "MMS GA",
+    status: "Ongoing",
+    statusColor: "warning",
+    image: img5,
+  },
+  {
+    title: "MMS HDG",
+    status: "Ongoing",
+    statusColor: "warning",
+    image: img6,
+  },
+  {
+    title: "MMS FAB",
+    status: "Not Started",
+    statusColor: "danger",
+    image: img7,
+  },
+  {
+    title: "Inverter Mounting Drawing",
+    status: "Not Started",
+    statusColor: "danger",
+    image: img7,
+  },
+  {
+    title: "Fencing Layout",
+    status: "Ongoing",
+    statusColor: "warning",
+    image: img5,
+  },
+  {
+    title: "Camera and Street Light BOQ",
+    status: "Ongoing",
+    statusColor: "warning",
+    image: img6,
+  },
+];
+
+
+
+const FormComponentLot1 = () => {
+  const [sharedStates, setSharedStates] = useState(Array(labelsLot1.length).fill(""));
+
+  const handleSharedChange = (index, value) => {
+    const updated = [...sharedStates];
+    updated[index] = value;
+    setSharedStates(updated);
+  };
+
+  return (
+    <Card
+      variant="outlined"
+      sx={{ p: 3, maxWidth: 600, mx: "auto", maxHeight: 400, overflowY: "auto" }}
+    >
+      <Grid container spacing={2}>
+        {labelsLot1.map((label, index) => (
+          <React.Fragment key={index}>
+            <Grid xs={4}>
+              <Typography mt={3} level="body-md">{label}</Typography>
+            </Grid>
+            <Grid xs={4}>
+              <FormControl size="sm" sx={{ width: "100%" }}>
+                <FormLabel>Status</FormLabel>
+                <Select defaultValue="">
+                  {options.map((opt, i) => (
+                    <Option key={i} value={opt}>
+                      {opt}
+                    </Option>
+                  ))}
+                </Select>
+              </FormControl>
+            </Grid>
+            <Grid xs={4}>
+              <FormControl size="sm" sx={{ width: "100%" }}>
+                <FormLabel>Shared</FormLabel>
+                <Select
+                  value={sharedStates[index]}
+                  onChange={(_, value) => handleSharedChange(index, value)}
+                >
+                  {shareOptions.map((opt, i) => (
+                    <Option key={i} value={opt}>
+                      {opt}
+                    </Option>
+                  ))}
+                </Select>
+              </FormControl>
+
+              {sharedStates[index] === "Yes" && (
+                <FormControl size="sm" sx={{ mt: 1 }}>
+                  <FormLabel>Link</FormLabel>
+                  <Input placeholder="Enter link" />
+                </FormControl>
+              )}
+            </Grid>
+          </React.Fragment>
+        ))}
+      </Grid>
+    </Card>
+  );
+};
+
+
+
+const FormComponentLot2 = () => (
   <Card
     variant="outlined"
     sx={{ p: 3, maxWidth: 600, mx: "auto", maxHeight: 400, overflowY: "auto" }}
   >
     <Grid container spacing={2}>
-      {labels.map((label, index) => (
+      {labelsLot2.map((label, index) => (
         <React.Fragment key={index}>
           <Grid xs={4}>
-            <Typography level="body-md">{label}</Typography>
+            <Typography mt={3} level="body-md">{label}</Typography>
           </Grid>
           <Grid xs={4}>
             <FormControl size="sm" sx={{ width: "100%" }}>
@@ -107,139 +348,217 @@ const FormComponent = () => (
   </Card>
 );
 
-const TrackerTimeline = () => {
-  const getStatusCount = (status) =>
-    trackerData.filter((item) => item.status === status).length;
+const FormComponentCivilandMech = () => (
+  <Card
+    variant="outlined"
+    sx={{ p: 3, maxWidth: 600, mx: "auto", maxHeight: 400, overflowY: "auto" }}
+  >
+    <Grid container spacing={2}>
+      {CivilandMech.map((label, index) => (
+        <React.Fragment key={index}>
+          <Grid xs={4}>
+            <Typography mt={3} level="body-md">{label}</Typography>
+          </Grid>
+          <Grid xs={4}>
+            <FormControl size="sm" sx={{ width: "100%" }}>
+              <FormLabel>Status</FormLabel>
+              <Select defaultValue="">
+                {options.map((opt, i) => (
+                  <Option key={i} value={opt}>
+                    {opt}
+                  </Option>
+                ))}
+              </Select>
+            </FormControl>
+          </Grid>
+          <Grid xs={4}>
+            <FormControl size="sm" sx={{ width: "100%" }}>
+              <FormLabel>Shared</FormLabel>
+              <Select defaultValue="">
+                {shareOptions.map((opt, i) => (
+                  <Option key={i} value={opt}>
+                    {opt}
+                  </Option>
+                ))}
+              </Select>
+            </FormControl>
+          </Grid>
+        </React.Fragment>
+      ))}
+    </Grid>
+  </Card>
+);
 
-  const total = trackerData.length;
-  const completed = getStatusCount("Done");
-  const ongoing = getStatusCount("Ongoing");
-  const notStarted = getStatusCount("Not Started");
+const TrackerTimelineLot1 = ({ trackerDataLot2 = [] }) => {
+  const getStatusColor = (status) => {
+    switch (status) {
+      case "Done":
+        return "green";
+      case "Ongoing":
+        return "orange";
+      case "Not Started":
+        return "red";
+      default:
+        return "gray";
+    }
+  };
 
-  const lastDoneIndex = trackerData
-    .map((item) => item.status)
-    .lastIndexOf("Done");
+  const iconStyle = (item) => ({
+    background: "#fff",
+    color: "#000",
+    boxShadow: "0 0 0 4px " + getStatusColor(item.status),
+    backgroundImage: `url(${item.image})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+  });
 
   return (
-    <Box>
-      {/* Status summary */}
-      <Grid container spacing={2} justifyContent="center" mb={20}>
-        <Grid>
-          <Card variant="outlined" sx={{ px: 3, py: 2, textAlign: "center" }}>
-            <Typography level="h3" color="success">
-              {Math.round((completed / total) * 100)}%
+    <Box
+      sx={{
+        height: "80vh", // Adjust height as needed
+        overflowY: "auto",
+        pr: 1,
+      }}
+    >
+      <VerticalTimeline>
+        {trackerDataLot1.map((item, idx) => (
+          <VerticalTimelineElement
+            key={idx}
+            contentStyle={{
+              borderTop: `4px solid ${getStatusColor(item.status)}`,
+            }}
+            contentArrowStyle={{
+              borderRight: `7px solid ${getStatusColor(item.status)}`,
+            }}
+            iconStyle={iconStyle(item)}
+            icon={<div></div>}
+          >
+            <Typography level="h5" fontWeight={600}>
+              {item.title}
             </Typography>
-            <Typography level="body1">Completed</Typography>
-          </Card>
-        </Grid>
-        <Grid>
-          <Card variant="outlined" sx={{ px: 3, py: 2, textAlign: "center" }}>
-            <Typography level="h3" color="warning">
-              {Math.round((ongoing / total) * 100)}%
+            <Typography level="body2" color={getStatusColor(item.status)}>
+              {item.status}
             </Typography>
-            <Typography level="body1">Ongoing</Typography>
-          </Card>
-        </Grid>
-        <Grid>
-          <Card variant="outlined" sx={{ px: 3, py: 2, textAlign: "center" }}>
-            <Typography level="h3" color="danger">
-              {Math.round((notStarted / total) * 100)}%
-            </Typography>
-            <Typography level="body1">Not Started</Typography>
-          </Card>
-        </Grid>
-      </Grid>
-
-      {/* Timeline with progress bar */}
-      <Box
-        sx={{
-          position: "relative",
-          height: 200,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          px: 4,
-          borderTop: "5px solid",
-          borderColor: "neutral.300",
-        }}
-      >
-        {/* Blue progress line */}
-        <Box
-          sx={{
-            position: "absolute",
-            top: -4,
-            left: `${(1 / (total - 1)) * 50}%`,
-            right: `${(1 / (total - 1)) * 50}%`,
-            height: 5,
-            zIndex: 1,
-            background: `linear-gradient(to right, #1976d2 ${
-              (lastDoneIndex / (total - 1)) * 100
-            }%, #e0e0e0 ${(lastDoneIndex / (total - 1)) * 100}%)`,
-          }}
-        />
-
-        {trackerData.map((item, idx) => (
-          <Box key={idx} sx={{ textAlign: "center", position: "relative", zIndex: 2 }}>
-            {/* Label & status */}
-            <Box
-              sx={{
-                position: "absolute",
-                top: -250,
-                left: "50%",
-                transform: "translateX(-50%)",
-              }}
-            >
-              <Typography  fontSize={'1rem'} maxWidth={'200px'}>{item.title}</Typography>
-              <Typography level="body2" fontSize={'1.1rem'} color={item.statusColor}>
-                {item.status}
-              </Typography>
-            </Box>
-
-            {/* Dot */}
-            <Box
-              sx={{
-                width: 14,
-                height: 14,
-                borderRadius: "50%",
-                backgroundColor: "#ffffff",
-                position: "absolute",
-                top: -108,
-                left: "50%",
-                transform: "translateX(-50%)",
-                zIndex:3
-              }}
-            />
-
-            {/* Image */}
-            <Box
-              sx={{
-                top:-136,
-                transform: "translateX(-50%)",
-                position: "absolute",
-                left: "50%",
-                width: 60,
-                height: 60,
-                borderRadius: "50%",
-                overflow: "hidden",
-                border: "2px solid white",
-                boxShadow: "sm",
-                mx: "auto",
-                zIndex: 2,
-              }}
-            >
-              <img
-                src={item.image}
-                alt={item.title}
-                style={{ width: "100%", height: "100%", objectFit: "cover" }}
-              />
-            </Box>
-          </Box>
+          </VerticalTimelineElement>
         ))}
-      </Box>
+      </VerticalTimeline>
     </Box>
   );
 };
 
+const TrackerTimelineLot2 = ({ trackerDataLot2 = [] }) => {
+  const getStatusColor = (status) => {
+    switch (status) {
+      case "Done":
+        return "green";
+      case "Ongoing":
+        return "orange";
+      case "Not Started":
+        return "red";
+      default:
+        return "gray";
+    }
+  };
+
+  const iconStyle = (item) => ({
+    background: "#fff",
+    color: "#000",
+    boxShadow: "0 0 0 4px " + getStatusColor(item.status),
+    backgroundImage: `url(${item.image})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+  });
+
+  return (
+    <Box
+      sx={{
+        height: "80vh", // Adjust height as needed
+        overflowY: "auto",
+        pr: 1,
+      }}
+    >
+      <VerticalTimeline>
+        {trackerDataLot2.map((item, idx) => (
+          <VerticalTimelineElement
+            key={idx}
+            contentStyle={{
+              borderTop: `4px solid ${getStatusColor(item.status)}`,
+            }}
+            contentArrowStyle={{
+              borderRight: `7px solid ${getStatusColor(item.status)}`,
+            }}
+            iconStyle={iconStyle(item)}
+            icon={<div></div>}
+          >
+            <Typography level="h5" fontWeight={600}>
+              {item.title}
+            </Typography>
+            <Typography level="body2" color={getStatusColor(item.status)}>
+              {item.status}
+            </Typography>
+          </VerticalTimelineElement>
+        ))}
+      </VerticalTimeline>
+    </Box>
+  );
+};
+
+const TrackerTimelineCivilandMech = ({ trackerDataCivilandMech = [] }) => {
+  const getStatusColor = (status) => {
+    switch (status) {
+      case "Done":
+        return "green";
+      case "Ongoing":
+        return "orange";
+      case "Not Started":
+        return "red";
+      default:
+        return "gray";
+    }
+  };
+
+  const iconStyle = (item) => ({
+    background: "#fff",
+    color: "#000",
+    boxShadow: "0 0 0 4px " + getStatusColor(item.status),
+    backgroundImage: `url(${item.image})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+  });
+
+  return (
+    <Box
+      sx={{
+        height: "80vh", // Adjust height as needed
+        overflowY: "auto",
+        pr: 1,
+      }}
+    >
+      <VerticalTimeline>
+        {trackerDataCivilandMech.map((item, idx) => (
+          <VerticalTimelineElement
+            key={idx}
+            contentStyle={{
+              borderTop: `4px solid ${getStatusColor(item.status)}`,
+            }}
+            contentArrowStyle={{
+              borderRight: `7px solid ${getStatusColor(item.status)}`,
+            }}
+            iconStyle={iconStyle(item)}
+            icon={<div></div>}
+          >
+            <Typography level="h5" fontWeight={600}>
+              {item.title}
+            </Typography>
+            <Typography level="body2" color={getStatusColor(item.status)}>
+              {item.status}
+            </Typography>
+          </VerticalTimelineElement>
+        ))}
+      </VerticalTimeline>
+    </Box>
+  );
+};
 
 const ProcessTracker = () => {
   const [activeTab, setActiveTab] = useState("Dashboard");
@@ -281,7 +600,12 @@ const ProcessTracker = () => {
       </Card>
 
       <Box display="flex" gap={2} mb={4}>
-        {["Dashboard", "Drawing Lot1", "Drawing Lot2", "Civil & Mechanical"].map((tab) => (
+        {[
+          "Dashboard",
+          "Drawing Lot1",
+          "Drawing Lot2",
+          "Civil & Mechanical",
+        ].map((tab) => (
           <Button
             key={tab}
             variant={activeTab === tab ? "solid" : "outlined"}
@@ -395,7 +719,9 @@ const ProcessTracker = () => {
                   <Typography level="h3">
                     <b>{section.done}</b> out of <b>{section.total}</b>
                   </Typography>
-                  <Box sx={{ display: "flex", justifyContent: "center", my: 1 }}>
+                  <Box
+                    sx={{ display: "flex", justifyContent: "center", my: 1 }}
+                  >
                     <Chip color="success" variant="solid" size="md">
                       Completed
                     </Chip>
@@ -408,12 +734,28 @@ const ProcessTracker = () => {
         </>
       )}
 
-      {[
-        "Drawing Lot1",
-        "Drawing Lot2",
-        "Civil & Mechanical",
-      ].includes(activeTab) &&
-        (selectedOption === "form" ? <FormComponent /> : <TrackerTimeline />)}
+      {["Drawing Lot1"].includes(activeTab) &&
+        (selectedOption === "form" ? (
+          <FormComponentLot1 />
+        ) : (
+          <TrackerTimelineLot1 trackerDataLot1={trackerDataLot1} />
+        ))}
+
+      {["Drawing Lot2"].includes(activeTab) &&
+        (selectedOption === "form" ? (
+          <FormComponentLot2 />
+        ) : (
+          <TrackerTimelineLot2 trackerDataLot2={trackerDataLot2} />
+        ))}
+
+      {["Civil & Mechanical"].includes(activeTab) &&
+        (selectedOption === "form" ? (
+          <FormComponentCivilandMech />
+        ) : (
+          <TrackerTimelineCivilandMech
+            trackerDataCivilandMech={trackerDataCivilandMech}
+          />
+        ))}
     </Box>
   );
 };
