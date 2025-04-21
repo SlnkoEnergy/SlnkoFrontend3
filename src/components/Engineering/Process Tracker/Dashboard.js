@@ -242,10 +242,10 @@ const trackerDataCivilandMech = [
   },
 ];
 
-
-
 const FormComponentLot1 = () => {
-  const [sharedStates, setSharedStates] = useState(Array(labelsLot1.length).fill(""));
+  const [sharedStates, setSharedStates] = useState(
+    Array(labelsLot1.length).fill("")
+  );
 
   const handleSharedChange = (index, value) => {
     const updated = [...sharedStates];
@@ -256,13 +256,21 @@ const FormComponentLot1 = () => {
   return (
     <Card
       variant="outlined"
-      sx={{ p: 3, maxWidth: 600, mx: "auto", maxHeight: 400, overflowY: "auto" }}
+      sx={{
+        p: 3,
+        maxWidth: 600,
+        mx: "auto",
+        maxHeight: 400,
+        overflowY: "auto",
+      }}
     >
       <Grid container spacing={2}>
         {labelsLot1.map((label, index) => (
           <React.Fragment key={index}>
             <Grid xs={4}>
-              <Typography mt={3} level="body-md">{label}</Typography>
+              <Typography mt={3} level="body-md">
+                {label}
+              </Typography>
             </Grid>
             <Grid xs={4}>
               <FormControl size="sm" sx={{ width: "100%" }}>
@@ -305,8 +313,6 @@ const FormComponentLot1 = () => {
   );
 };
 
-
-
 const FormComponentLot2 = () => (
   <Card
     variant="outlined"
@@ -316,7 +322,9 @@ const FormComponentLot2 = () => (
       {labelsLot2.map((label, index) => (
         <React.Fragment key={index}>
           <Grid xs={4}>
-            <Typography mt={3} level="body-md">{label}</Typography>
+            <Typography mt={3} level="body-md">
+              {label}
+            </Typography>
           </Grid>
           <Grid xs={4}>
             <FormControl size="sm" sx={{ width: "100%" }}>
@@ -357,7 +365,9 @@ const FormComponentCivilandMech = () => (
       {CivilandMech.map((label, index) => (
         <React.Fragment key={index}>
           <Grid xs={4}>
-            <Typography mt={3} level="body-md">{label}</Typography>
+            <Typography mt={3} level="body-md">
+              {label}
+            </Typography>
           </Grid>
           <Grid xs={4}>
             <FormControl size="sm" sx={{ width: "100%" }}>
@@ -433,7 +443,7 @@ const TrackerTimelineLot1 = ({ trackerDataLot2 = [] }) => {
             iconStyle={iconStyle(item)}
             icon={<div></div>}
           >
-            <Typography level="h5" fontWeight={600}>
+            <Typography sx={{cursor:'pointer'}} level="h5" fontWeight={600}>
               {item.title}
             </Typography>
             <Typography level="body2" color={getStatusColor(item.status)}>
@@ -490,7 +500,7 @@ const TrackerTimelineLot2 = ({ trackerDataLot2 = [] }) => {
             iconStyle={iconStyle(item)}
             icon={<div></div>}
           >
-            <Typography level="h5" fontWeight={600}>
+            <Typography sx={{cursor:'pointer'}} level="h5" fontWeight={600}>
               {item.title}
             </Typography>
             <Typography level="body2" color={getStatusColor(item.status)}>
@@ -547,7 +557,7 @@ const TrackerTimelineCivilandMech = ({ trackerDataCivilandMech = [] }) => {
             iconStyle={iconStyle(item)}
             icon={<div></div>}
           >
-            <Typography level="h5" fontWeight={600}>
+            <Typography sx={{cursor:'pointer'}} level="h5" fontWeight={600}>
               {item.title}
             </Typography>
             <Typography level="body2" color={getStatusColor(item.status)}>
